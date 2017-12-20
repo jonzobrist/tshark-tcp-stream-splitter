@@ -24,6 +24,14 @@ Output files will be stored by pattern `$PWD/very-big-file.pcap.parts/$CLIENT_IP
 
 If there's a lot concurrent tcp streams in one big PCAP you may avoid [fail with to many opened file descriptor](https://github.com/strizhechenko/tshark-tcp-stream-splitter/issues/1) by set ulimit to maximal available value:
 
+MacOS:
+
+```
+ulimit -n 2048
+```
+
+Some linux may allow bigger value:
+
 ```
 ulimit -n 4096
 ```
